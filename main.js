@@ -8,37 +8,26 @@
 		return Math.floor(Math.random() * (max - min + 1)) + min; 
 	}
 
-function generateMountain(variant) {
-		var mountain = document.createElement('div');
-		mountain.classList.add('mountain');
-		mountain.classList.add(variant);
-		mountain.style.borderLeftWidth = randomIntBetween(50, 100);
-		mountain.style.borderRightWidth = randomIntBetween(50, 100);
-		mountain.style.borderBottomWidth = randomIntBetween(50, parseInt(canvasHeight/3)) ;
-		mountain.style.marginRight = randomIntBetween(-25, -120) + '%';
-		canvas.appendChild(mountain);
-	}
-
 
 function generateSnow(variant) {
 		var cloud = document.createElement('div');
 		cloud.classList.add('snow');
 		cloud.classList.add(variant);
 		cloud.style.left = randomIntBetween(0, 100) + '%';
-		cloud.style.webkitAnimationDelay = randomIntBetween(0, 10000);
+		cloud.style.animationDelay = randomIntBetween(0, 10000) + 'ms';
 		canvas.appendChild(cloud);
 	}
 
 	function init() {
 		var i;
-		for(i=0;i<10;i++) {
-			generateMountain('variant-' +(parseInt(i % 5) + 1));
-		}
+		// for(i=0;i<10;i++) {
+		// 	generateMountain('variant-' +(parseInt(i % 5) + 1));
+		// }
 
 			for(i=0;i<200;i++) {
-			generateSnow('variant-' +(parseInt(i % 5) + 1));
-		}
-		animatedEls = document.querySelectorAll('.mountain, .bird, .wing-l, .wing-r, .letter, .cloud, .snow, body, .moon');
+				generateSnow('variant-' +(parseInt(i % 5) + 1));
+			}
+		animatedEls = document.querySelectorAll('.snowman__right-hand, .snowman__left-hand, .snowman__body, .snowman__legs .cloud, .snow, body, .moon');
 	}
 
 	//PLAYING
@@ -46,6 +35,7 @@ function generateSnow(variant) {
 	var current = -1;
 	var isPlaying = true;
 	var to;
+	var textContainer = document.querySelector('.text');
 
 	function togglePlay() {
 		var audio = document.getElementById('audio');
@@ -117,9 +107,11 @@ function generateSnow(variant) {
 	function step() {
 		if(typeof steps[current] === 'function') {
 			steps[current]();
-		} else if (steps[current]){
+		} else if (steps[current].classes){
 			document.body.setAttribute('data-step', current);
 			updateScene(steps[current]);
+		} else if (steps[current].text) {
+			textContainer.textContent = steps[current].text;
 		}
 	}
 
@@ -128,56 +120,30 @@ function generateSnow(variant) {
 	}
 
 	var steps = [
-		{
-			classes: 'animate-bird',
-			delay: 2000
-		},
-		{
-			classes: 'animate-clouds',
-			delay: 1000
-		},
-		{
-			classes: 'animate-mountains',
-			delay: 8000
-		},
-		{
-			classes: 'animate-falling',
-			delay: 1500
-		},
-		{
-			classes: 'animate-rising',
-			delay: 8000
-		},
-		{
-			classes: 'show-bird-mate',
-			delay: 8000
-		},
-		{
-			classes: 'animate-day-passing',
-			delay: 10000
-		},
-		{
-			classes: 'animate-snow',
-			delay: 10000
-		},
-		{
-			classes: 'animate-getting-old',
-			delay: 20000
-		},
-		{
-			classes: 'animate-guy-getting-old',
-			delay: 0
-		},{
-			classes: 'animate-guy-falling',
-			delay: 5000
-		},{
-			classes: 'show-him',
-			delay: 5000
-		},
-	{
-			classes: 'batman',
-			delay: 5000
-		}
+
+		{ classes: 'animate-snow', delay: 0 },
+		{ text: 'Hello', delay: 2000 },
+		{ text: 'My name is Carlos!', delay: 3000 },
+		{ text: 'Isn\'t the fall great...', delay: 0 },
+		{ classes: 'animate-clouds', delay: 3000 },
+		{ text: 'HAPPY HALLOWEENxoxoxox', delay: 1000 },
+		{ classes: 'animate-right-arm-falling', delay: 0 },
+		{ text: 'F*** ME THAT HURTS', delay: 0 },
+
+		{ text: 'Hey, could you, er, pop that back in for me??', delay: 5000 },
+		{ text: 'Please?', delay: 2000 },
+		{ text: 'SERIOUSLY!?', delay: 3000 },
+		{ text: 'Fine.', delay: 1000 },
+		{ classes: 'animate-left-arm-falling', delay: 1000 },
+		{ text: 'OWWWEEEEEEEEE.', delay: 4000 },
+		{ text: 'holy mother of snow my F**@** arms!!!.', delay: 1000 },
+		{ classes: 'animate-day-passing', delay: 2000 },
+		{ classes: 'animate-legs-melt', delay: 2000 },
+		{ text: 'fuckkkkkkkkkk.', delay: 6000 },
+		{ text: 'kkkkkkkkkkkkkkkkk.', delay: 6000 },
+ 		{ classes: 'animate-body-melt', delay: 4000 },
+		{ text: 'k thx bye xoxo.', delay: 6000 }
+
 	]
 	init();
 	next();

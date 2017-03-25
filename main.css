@@ -12,56 +12,6 @@ body {
 	        transform: translate3d(0,0,0);
 }
 
-.mountain {
-	width: 0;
-	height: 0;
-	border-left: 80px solid transparent;
-	border-right: 60px solid transparent;
-	border-bottom: 140px solid rgb(161, 230, 255);
-	position: absolute;
-	right: 0%;
-	bottom: 0;
-	 margin-right: -140px;
-	 z-index: 2;
-}
-
-.mountain.variant-1 {
-  -webkit-animation-duration: 40s;
-          animation-duration: 40s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-.mountain.variant-2 {
-  -webkit-animation-duration: 42s;
-          animation-duration: 42s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-    opacity: 0.95;
-
-}
-.mountain.variant-3 {
-  -webkit-animation-duration: 44s;
-          animation-duration: 44s;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-    opacity: 0.9;
-
-}
-.mountain.variant-4 {
-  -webkit-animation-duration: 48s;
-          animation-duration: 48s;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-      opacity: 0.85;
-
-}
-.mountain.variant-5 {
-  -webkit-animation-duration: 50s;
-          animation-duration: 50s;
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
-    opacity: 0.8;
-}
 
 .cloud {
   background: #ebf5fc;
@@ -186,82 +136,6 @@ body {
 }
 
 
-.bird div {
-  position:absolute;
-}
-
-.bird { 
-  position:absolute;
-  
-  top: 50%;
-  left: 50%;
-  margin-left: -30px;
-  z-index: 3;
- }
- .bird.pink { 
-  position:absolute;
-  top: 50%;
-  left: 0%;
-  margin-left: -100px;
-  z-index: 3;
- }
-
-
-.body1,.body2,.wing-l,.wing-r {
-  	width: 0px; height: 0px;
-    border-color: transparent;
-    border-style: solid;
-}
-.body1 {
-	border-width: 15px; 
-  border-left-width:25px;
-  border-top-width:15px;
-  border-right-width: 55px;
-  border-top-color: #333;
-}
-.pink .body1 {
-	border-top-color:#FF91FE
-}
-
-.body2 { 
-  left: 50px; bottom: 0px;
-	border-width: 10px; 
-  border-left-width:5px;
-  border-top-width:0px;
-  border-right-width: 15px;
-  border-bottom-color: #777;
-}
-.pink .body2 {
-	border-bottom-color: #F4BEFF;
-}
-
-.wing-l {
-  left: 22px; bottom: 0px; 
-	border-width: 60px; 
-  border-left-width:20px;
-  border-top-width:0px;
-  border-right-width: 6px;
-  border-bottom-color: #444;
-  -webkit-animation: flap-l 0.7s infinite;
-          animation: flap-l 0.7s infinite; 
-}
-.pink .wing-l {
-	border-bottom-color: #F993FC;
-}
-
-.wing-r {
-  left: 22px; top:0px;
-	border-width: 60px; 
-  border-left-width:20px;
-  border-bottom-width:0px;
-  border-right-width: 6px;
-  border-top-color: #777;
-  -webkit-animation: flap-r 0.7s infinite;
-          animation: flap-r 0.7s infinite; 
-}
-.pink .wing-r {
-	border-top-color: #FACAFF;
-}
 
 .controls {
 	position: absolute;
@@ -295,60 +169,98 @@ body {
 }
 
 
-.animate-mountains .mountain {
-	-webkit-animation: mountains-in-out 40s 0s infinite linear;
-	        animation: mountains-in-out 40s 0s infinite linear;
-}
 .animate-clouds .cloud {
 	  -webkit-animation: clouds-in-out 16s 0s infinite linear;
 	          animation: clouds-in-out 16s 0s infinite linear;
 }
 .animate-snow .snow {
-  -webkit-animation: snowside 4s ease-in-out forwards infinite, snowfall 5s ease-in-out forwards 6;
-          animation: snowside 4s ease-in-out forwards infinite, snowfall 5s ease-in-out forwards 6;
-}
-.animate-bird .bird {
-	-webkit-animation: bob 0.7s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
-	        animation: bob 0.7s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
-}
-.show-bird-mate .bird.pink {
-	-webkit-animation: fly-in 5s 1 ease-in-out, bob 5.5s 2s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
-	        animation: fly-in 5s 1 ease-in-out, bob 5.5s 2s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
+    animation: snowside 4s ease-in-out forwards infinite, snowfall 5s ease-in-out forwards 6;
 }
 body.animate-day-passing {
-	-webkit-animation: change-day 20s infinite ease-in-out;
-	        animation: change-day 20s infinite ease-in-out;
+	-webkit-animation: change-day 10s  ease-in-out forwards;
+	        animation: change-day 10s  ease-in-out forwards;
 }
 .animate-day-passing .moon {
-	-webkit-animation: moon-to-sun 20s infinite ease-in-out, moonrise-half 10s 1 linear, moonrise-full 10s 10s infinite linear;
-	        animation: moon-to-sun 20s infinite ease-in-out, moonrise-half 10s 1 linear, moonrise-full 10s 10s infinite linear;
+	-webkit-animation: moon-to-sun 10s  ease-in-out forwards;
+	        animation: moon-to-sun 10s  ease-in-out forwards;
 }
-.animate-getting-old .bird.pink {
-	-webkit-animation: fade-out 10s 1 ease-in-out,  fall-back 10s 1 ease-in-out, bob 1.5s 2s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
-	        animation: fade-out 10s 1 ease-in-out,  fall-back 10s 1 ease-in-out, bob 1.5s 2s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
+.animate-right-arm-falling .snowman__right-hand {
+	-webkit-animation: falling-right 1.5s cubic-bezier(0.7, 0.7, 0.1, 0.4) forwards;
+	        animation: falling-right 1.5s cubic-bezier(0.7, 0.7, 0.1, 0.4) forwards;
+      animation-delay: 0s;
+
 }
-.animate-falling .bird {
-	-webkit-animation: falling 1.5s cubic-bezier(0.7, 0.7, 0.1, 0.4);
-	        animation: falling 1.5s cubic-bezier(0.7, 0.7, 0.1, 0.4);
+
+.animate-left-arm-falling .snowman__left-hand {
+	-webkit-animation: falling-left 1.5s cubic-bezier(0.5, 0.3, 0.8, 1) forwards;
+	        animation: falling-left 1.5s cubic-bezier(0.5, 0.3, 0.8, 1) forwards;
+	        animation-delay: 0s;
 }
-.animate-rising .bird {
-	-webkit-animation: rising 3s cubic-bezier(0.7, 0.7, 0.1, 0.4);
-	        animation: rising 3s cubic-bezier(0.7, 0.7, 0.1, 0.4);
+.animate-legs-melt .snowman__legs {
+		-webkit-animation: legs-melt 10s  ease-in-out forwards;
+	        animation: legs-melt 10s  ease-in-out forwards;
 }
-.animate-guy-getting-old .bird {
-	-webkit-animation: old-bird-dies 10s 1 ease-in-out;
-	        animation: old-bird-dies 10s 1 ease-in-out;
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
+
+.animate-body-melt .snowman__body {
+		-webkit-animation: body-melt 10s  cubic-bezier(0.5, 0.3, 0.8, 1)  forwards;
+	        animation: body-melt 10s cubic-bezier(0.5, 0.3, 0.8, 1) forwards;
 }
 
 
+@-webkit-keyframes legs-melt {
+	0% {
+		transform: skew(0)  rotate(0);
+		width: 200px;
+		height: 200px;
+	}
+	100% {
+    transform: skew(70deg) rotate(-30deg);
+    width: 300px;
+    height: 50px;
+    -webkit-filter: blur(7px);
+	}
+}
+@keyframes legs-melt {
+	0% {
+		transform: skew(0)  rotate(0);
+		width: 200px;
+		height: 200px;
+	}
+	100% {
+    transform: skew(70deg) rotate(-10deg);
+    width: 300px;
+    height: 50px;
+    -webkit-filter: blur(7px);
+	}
+}
 
 
+@-webkit-keyframes body-melt {
+	0% {
+		transform: skew(0)  rotate(0);
+		width: 160px;
+		height: 160px;
+	}
+	100% {
+    transform: skew(30deg) rotate(20deg);
+    width: 400px;
+    height: 30px;
+    -webkit-filter: blur(3px);
+	}
+}
+@keyframes body-melt {
+		0% {
+		transform: skew(0)  rotate(0);
+		width: 160px;
+		height: 160px;
+	}
+	100% {
+    transform: skew(30deg) rotate(20deg);
+    width: 400px;
+    height: 30px;
+    -webkit-filter: blur(3px);
+	}
+}
 @-webkit-keyframes clouds-in-out {
   0% {
     right: 0%;
@@ -474,149 +386,51 @@ body.animate-day-passing {
   }
 }
 
-@-webkit-keyframes flap-r {
-  0%,10%   { 	border-top-width: 60px; }
-  40%,60%  { 	border-top-width: 10px; }
-  100%     { 	border-top-width: 60px; }
-}
 
-@keyframes flap-r {
-  0%,10%   { 	border-top-width: 60px; }
-  40%,60%  { 	border-top-width: 10px; }
-  100%     { 	border-top-width: 60px; }
-}
-
-@-webkit-keyframes flap-l {
-  0%       { 	border-bottom-width: 0px; }
-  40%,60%  { 	border-bottom-width: 40px; }
-  100%     { 	border-bottom-width: 0px; }
-}
-
-@keyframes flap-l {
-  0%       { 	border-bottom-width: 0px; }
-  40%,60%  { 	border-bottom-width: 40px; }
-  100%     { 	border-bottom-width: 0px; }
-}
-
-
-@-webkit-keyframes bob {
-  0%   { 	-webkit-transform: translateY(-15px); 	transform: translateY(-15px); }
-  50%   { 	-webkit-transform: translateY(0); 	transform: translateY(0); }
-  100% { 	-webkit-transform: translateY(-15px); 	transform: translateY(-15px); }
-}
-
-
-@keyframes bob {
-  0%   { 	-webkit-transform: translateY(-15px); 	transform: translateY(-15px); }
-  50%   { 	-webkit-transform: translateY(0); 	transform: translateY(0); }
-  100% { 	-webkit-transform: translateY(-15px); 	transform: translateY(-15px); }
-}
-@-webkit-keyframes fly-in {
-  0%   { 	left: 0% }
-  100% { 	left: 50% }
-}
-@keyframes fly-in {
-  0%   { 	left: 0% }
-  100% { 	left: 50% }
-}
-
-@-webkit-keyframes falling {
+@-webkit-keyframes falling-right {
   0%   { 	
-  	top: 50%;
-		-webkit-transform: rotate(0);
-		        transform: rotate(0);
+		-webkit-transform: rotate(0) translate(0,0);
+		        transform: rotate(0) translate(0,0);
   }
   100% { 	
-  	top: 95%;
-  	-webkit-transform: rotate(90deg);
-  	        transform: rotate(90deg);
+  	-webkit-transform: rotate(190deg) translate(-100px, -220px) ;
+  	        transform: rotate(190deg) translate(-100px, -220px) ;
   }
 }
 
-@keyframes falling {
+@keyframes falling-right {
   0%   { 	
-  	top: 50%;
-		-webkit-transform: rotate(0);
-		        transform: rotate(0);
+		-webkit-transform: rotate(0) translate(0,0);
+		        transform: rotate(0) translate(0,0);
   }
   100% { 	
-  	top: 95%;
-  	-webkit-transform: rotate(90deg);
-  	        transform: rotate(90deg);
+  	-webkit-transform: rotate(190deg)  translate(-100px, -220px) ;
+  	        transform: rotate(190deg) translate(-100px, -220px) ;
   }
 }
 
-@-webkit-keyframes rising {
-	100% {
-  	top: 50%;
-  	-webkit-transform: rotate(0deg);
-  	        transform: rotate(0deg);
-	}
-  0% { 	
-  	top: 95%;
-  	-webkit-transform: rotate(90deg);
-  	        transform: rotate(90deg);
+@-webkit-keyframes falling-left {
+  0%   { 	
+		-webkit-transform: rotate(0) translate(0,0);
+		        transform: rotate(0) translate(0,0);
+  }
+  100% { 	
+  	-webkit-transform: rotate(-190deg) translate(150px, 220px) ;
+  	        transform: rotate(-190deg) translate(150px, 220px) ;
   }
 }
 
-@keyframes rising {
-	100% {
-  	top: 50%;
-  	-webkit-transform: rotate(0deg);
-  	        transform: rotate(0deg);
-	}
-  0% { 	
-  	top: 95%;
-  	-webkit-transform: rotate(90deg);
-  	        transform: rotate(90deg);
+@keyframes falling-left {
+  0%   { 	
+		-webkit-transform: rotate(0) translate(0,0);
+		        transform: rotate(0) translate(0,0);
+  }
+  100% { 	
+  	-webkit-transform: rotate(-190deg)  translate(-100px, -220px) ;
+  	        transform: rotate(-190deg) translate(-100px, -220px) ;
   }
 }
-@-webkit-keyframes fade-out {
-  0%   { 	left: 50%;
-		-webkit-filter: blur(0) grayscale(0);
-		        filter: blur(0) grayscale(0);
-   }
-   50% {
-   	-webkit-filter: blur(4px) grayscale(1);
-   	        filter: blur(4px) grayscale(1);
-   }
-  100% { 	left: 0%; -webkit-filter: blur(12px) grayscale(1); filter: blur(12px) grayscale(1); }
-}
-@keyframes fade-out {
-  0%   { 	left: 50%;
-		-webkit-filter: blur(0) grayscale(0);
-		        filter: blur(0) grayscale(0);
-   }
-   50% {
-   	-webkit-filter: blur(4px) grayscale(1);
-   	        filter: blur(4px) grayscale(1);
-   }
-  100% { 	left: 0%; -webkit-filter: blur(12px) grayscale(1); filter: blur(12px) grayscale(1); }
-}
-@-webkit-keyframes old-bird-dies {
-  0%   { 	top: 50%;
-		-webkit-filter: blur(0) grayscale(0);
-		        filter: blur(0) grayscale(0);
-   }
-   50% {
-   	-webkit-filter: blur(4px) grayscale(1);
-   	        filter: blur(4px) grayscale(1);
-   }
-  100% { 	top: -10%; -webkit-filter: blur(12px) grayscale(1); filter: blur(12px) grayscale(1); 
-  }
-}
-@keyframes old-bird-dies {
-  0%   { 	top: 50%;
-		-webkit-filter: blur(0) grayscale(0);
-		        filter: blur(0) grayscale(0);
-   }
-   50% {
-   	-webkit-filter: blur(4px) grayscale(1);
-   	        filter: blur(4px) grayscale(1);
-   }
-  100% { 	top: -10%; -webkit-filter: blur(12px) grayscale(1); filter: blur(12px) grayscale(1); 
-  }
-}
+
 @-webkit-keyframes change-day {
 	0% {
 		background: rgb(12, 0, 68);
@@ -627,14 +441,8 @@ body.animate-day-passing {
 	45% {
 		background: rgb(12, 0, 68);
 	}
-	55% {
-		background: rgb(146, 220, 255);
-	}
-	75% {
-		background: rgb(87, 198, 255);
-	}
 	100% {
-		background: rgb(12, 0, 68);
+		background: rgb(146, 220, 255);
 	}
 }
 @keyframes change-day {
@@ -647,14 +455,8 @@ body.animate-day-passing {
 	45% {
 		background: rgb(12, 0, 68);
 	}
-	55% {
-		background: rgb(146, 220, 255);
-	}
-	75% {
-		background: rgb(87, 198, 255);
-	}
 	100% {
-		background: rgb(12, 0, 68);
+		background: rgb(146, 220, 255);
 	}
 }
 @-webkit-keyframes moon-to-sun {
@@ -670,15 +472,10 @@ body.animate-day-passing {
 		-webkit-transform: scale(1);
 		        transform: scale(1);
 	}
-	75% {
+	100% {
 		background: #FFC200;
 		-webkit-transform: scale(1.4);
 		        transform: scale(1.4);
-	}
-	100% {
-		background: #EAEAE3;
-		-webkit-transform: scale(1);
-		        transform: scale(1);
 	}
 }
 @keyframes moon-to-sun {
@@ -694,15 +491,10 @@ body.animate-day-passing {
 		-webkit-transform: scale(1);
 		        transform: scale(1);
 	}
-	75% {
+	100% {
 		background: #FFC200;
 		-webkit-transform: scale(1.4);
 		        transform: scale(1.4);
-	}
-	100% {
-		background: #EAEAE3;
-		-webkit-transform: scale(1);
-		        transform: scale(1);
 	}
 }
 @-webkit-keyframes moonrise-half {
@@ -793,25 +585,7 @@ body.animate-day-passing {
 	left: 5%;
 	display: block;
 }
-.text-container .text {
-	display: none;
-	z-index: 10;
-}
-.animate-day-passing .text-container-2 {
-	display: block;
-}
-.animate-falling .text-container-1 {
-	display: block;
-}
-.animate-snow .text-container-3 {
-	display: block;
-}
-.animate-guy-falling .text-container-4 {
-	display: block;
-}
-.batman .text-container-5 {
-	display: block;
-}
+
 .him {
 	display: none;
 }
