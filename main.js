@@ -142,8 +142,10 @@ function generateSnow(variant) {
 		{ text: 'fuckkkkkkkkkk.', delay: 6000 },
 		{ text: 'kkkkkkkkkkkkkkkkk.', delay: 6000 },
  		{ classes: 'animate-body-melt', delay: 4000 },
-		{ text: 'k thx bye xoxo.', delay: 6000 }
-
+		{ text: 'k thx bye xoxo.', delay: 12000 },
+		{ text: 'u still here?', delay: 12000 },
+		{ text: 'y u still here?', delay: 12000 },
+		{ text: 'srsly...', delay: 12000 }
 	]
 	init();
 	next();
