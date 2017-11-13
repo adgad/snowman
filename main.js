@@ -132,7 +132,7 @@ function generateSnow(variant) {
 
 		{ text: 'Hey, could you, er, pop that back in for me??', delay: 5000 },
 		{ text: 'Please?', delay: 2000 },
-		{ text: 'SERIOUSLY!?', delay: 3000 },
+		{ text: 'OMGPLEASE!', delay: 3000 },
 		{ text: 'Fine.', delay: 1000 },
 		{ classes: 'animate-left-arm-falling', delay: 1000 },
 		{ text: 'OWWWEEEEEEEEE.', delay: 4000 },
@@ -142,7 +142,7 @@ function generateSnow(variant) {
 		{ text: 'fuckkkkkkkkkk.', delay: 6000 },
 		{ text: 'kkkkkkkkkkkkkkkkk.', delay: 6000 },
  		{ classes: 'animate-body-melt', delay: 4000 },
-		{ text: 'k thx bye xoxo.', delay: 12000 },
+		{ text: 'k thx bai xoxo.', delay: 12000 },
 		{ text: 'u still here?', delay: 12000 },
 		{ text: 'y u still here?', delay: 12000 },
 		{ text: 'srsly...', delay: 12000 }
